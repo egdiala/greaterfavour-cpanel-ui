@@ -1,0 +1,55 @@
+// Timeline Css
+.timeline-box{
+    position: relative;
+    z-index: 10;
+}
+
+// Timeline Single
+.timeline-single{
+    position: relative;
+    align-items: end;
+    &:not(:last-child){
+        padding-bottom: 25px;
+    }
+    .timeline-line{
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        height: 100%;
+        width: 1px;
+        z-index: -1;
+        background-color: $border-light;
+    }
+    @include e("buble"){
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border-width: 2px !important;
+        border-style: solid;
+        @extend .bg-white;
+        &.buble-primary{
+            @extend .border-primary;
+        }
+        &.buble-success{
+            @extend .border-success;
+        }
+        &.buble-danger{
+            @extend .border-danger;
+        }
+        &.border-extra-light{
+            @extend .border-extra-light;
+        }
+    }
+    @include e("content"){
+        padding-left: 32px;
+        margin-top: -6px;
+        @include ssm{
+            padding-left: 16px;
+        }
+        p{
+            margin-bottom: 10px;
+            @extend .color-gray;
+        }
+    }
+}
